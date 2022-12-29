@@ -1,5 +1,9 @@
 # MyTestAPI
 
+## This is a basic API for learning and practice.
+
+In the initial comit the "Get" function was implemented.
+
 ## OpenAPI 3.0 Generated Flask project
 
 All the routes are defined in 'project/api' folder. 
