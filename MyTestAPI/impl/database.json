@@ -1,0 +1,16 @@
+{
+  "spacecrafts": [
+    {
+      "id": 1,
+      "name": "ISS",
+      "type": "station",
+      "description": "Not found"
+    },
+    {
+      "id": 2,
+      "name": "Satalite-X",
+      "type": "satellite",
+      "description": "Blue colored"
+    }
+  ]
+}
