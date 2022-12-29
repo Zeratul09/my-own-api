@@ -22,4 +22,8 @@ def PutSpacecraftId(spacecraftId):
     options = {}
     options["spacecraftId"] = spacecraftId
 
-    return impl.spacecrafts.PutSpacecraftId(options)
+    schema = model.Spacecraft()
+
+    body = parser.parse(schema, request, location='json')
+
+    return impl.spacecrafts.PutSpacecraftId(options, body)

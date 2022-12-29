@@ -23,3 +23,11 @@ $env:FLASK_APP = "MyTestAPI"            (at every restart you need to run this)
 $env:FLASK_ENV = "development"          (at every restart you need to run this)
 python -m flask run                     (at every restart you need to run this)
 ```
+
+To run this project:
+```
+pip install -r requirements.txt
+export FLASK_APP='MyTestAPI'
+export FLASK_ENV=development
+flask run
+```

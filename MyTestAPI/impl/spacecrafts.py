@@ -37,27 +37,22 @@ def GetSpacecraftId(options):
         return json.dumps(f'No spacecraft found for the provided `spacecraftId`: {options["spacecraftId"]}'), 404
 
 
-def PutSpacecraftId(options):
+def PutSpacecraftId(options, body):
     """
     :param options: A dictionary containing all the paramters for the Operations
         options["spacecraftId"]: The unique identifier of the spacecraft
 
+    :param body: The parsed body of the request
     """
 
     # Implement your business logic here
     # All the parameters are present in the options argument
-    # In our case, you cannot use PUT to update the ID of a spacecraft
-
-    #for specific_spacecraft in data_base["spacecrafts"]:
-    #    if (specific_spacecraft["id"] == int(options["spacecraftId"])):
-
-    print(options, file = sys.stderr)
-
-
 
     return json.dumps({
         "description": "<string>",
         "id": "<SpacecraftId>",
         "name": "<string>",
         "type": "<string>",
-    }), 200
+    }), 201
+
+
