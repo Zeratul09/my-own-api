@@ -14,10 +14,6 @@ def GetSpacecraftId(options):
         options["spacecraftId"]: The unique identifier of the spacecraft
 
     """
-    #Just testing below
-    #print(options["spacecraftId"], file=sys.stderr)
-
-
     # Implement your business logic here 
     # All the parameters are present in the options argument
     spacecraft_to_find = {
@@ -26,23 +22,19 @@ def GetSpacecraftId(options):
         "type": "<string>",
         "description": "<string>",
     }
+    spacecraft_found = False
     
     for specific_spacecraft in data_base["spacecrafts"]:
         if (specific_spacecraft["id"] == int(options["spacecraftId"])):
             spacecraft_to_find = specific_spacecraft
+            spacecraft_found = True
             break
-            #print("spacecraft found", file=sys.stderr)
-    
-    return json.dumps(spacecraft_to_find), 200
 
-    #This is testing
-    # Returning the exact values instead of placeholders (specific_spacecraft was i) check test.py for more info.
-    # return json.dumps({
-    #     "description": specific_spacecraft["description"],
-    #     "id": options["spacecraftId"],
-    #     "name": specific_spacecraft["name"],
-    #     "type": specific_spacecraft["type"],
-    # }), 200
+    #Equivalent to: "spacecraft_found is True"
+    if spacecraft_found:
+        return json.dumps(spacecraft_to_find), 200
+    else:
+        return json.dumps(f'No spacecraft found for the provided `spacecraftId`: {options["spacecraftId"]}'), 404
 
 
 def PutSpacecraftId(options):
@@ -51,9 +43,17 @@ def PutSpacecraftId(options):
         options["spacecraftId"]: The unique identifier of the spacecraft
 
     """
-    #Similar logic here just like with the get.
+
     # Implement your business logic here
     # All the parameters are present in the options argument
+    # In our case, you cannot use PUT to update the ID of a spacecraft
+
+    #for specific_spacecraft in data_base["spacecrafts"]:
+    #    if (specific_spacecraft["id"] == int(options["spacecraftId"])):
+
+    print(options, file = sys.stderr)
+
+
 
     return json.dumps({
         "description": "<string>",
